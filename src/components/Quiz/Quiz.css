@@ -1,0 +1,17 @@
+.quiz-travel-quiz {
+    color: rgb(30, 30, 30);
+    text-align: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.custom-link {
+    text-decoration: none; 
+}
+
+@media (max-width: 680px) {
+    .quiz-travel-quiz {
+        font-size: 30px; 
+    }
+}
+  
