@@ -76,3 +76,18 @@
       padding-right: 20px;
     }
 }
+
+@media (max-width: 500px) {
+    .quiz-travel {
+      font-size: 25px; 
+    }
+    .plane {
+        height: 29px; 
+    }
+
+    .quiz-rules {
+        font-size: 20px;
+        text-align: center;
+        color: rgb(72, 72, 72);
+    }
+}
