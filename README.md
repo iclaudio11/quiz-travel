@@ -14,7 +14,13 @@ Quiz Travel is a web application focused on sustainable tourism, featuring inter
 
 Visit the deployed version of the project at https://quiz-travel-6c57f.web.app to enjoy Quiz Travel without the need for local installation.
 
+## How to Run Locally
+
+1. Clone the repository.
+2. Navigate to the project folder.
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
+
 ## Authors
 
 - Claudio Iaculo
-
