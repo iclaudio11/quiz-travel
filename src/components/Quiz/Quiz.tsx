@@ -15,19 +15,32 @@ const Quiz: React.FC = () => {
   const [gameOver, setGameOver] = useState(false); 
 
   const startQuiz = () => {
+    setCurrentQuestionIndex(0); 
+    setScore(0);
     setGameOver(false); 
   };
 
   const handleAnswerClick = (answerIndex: number) => {
-    const isCorrect = Number(answerIndex) === questions[currentQuestionIndex].correctAnswer;
+  const isCorrect = Number(answerIndex) === questions[currentQuestionIndex].correctAnswer;
 
-    setScore((prevScore) => (prevScore + (isCorrect ? 1 : 0)));
-    setCurrentQuestionIndex((prevIndex) => (prevIndex + 1) % TOTAL_QUESTIONS);
+  setScore((prevScore) => (prevScore + (isCorrect ? 1 : 0)));
+  setCurrentQuestionIndex((prevIndex) => (prevIndex + 1) % TOTAL_QUESTIONS);
 
-    if (currentQuestionIndex === TOTAL_QUESTIONS - 1) {
-      setGameOver(true); 
-    }
-  };
+  if (currentQuestionIndex === TOTAL_QUESTIONS - 1) {
+    setGameOver(true);
+    
+    const quizAttempt = {
+      score: score + (isCorrect ? 1 : 0),
+      totalQuestions: TOTAL_QUESTIONS,
+      date: new Date().toLocaleString(), 
+    };
+
+    const quizHistory = JSON.parse(localStorage.getItem('quizHistory') || '[]');
+
+    localStorage.setItem('quizHistory', JSON.stringify([...quizHistory, quizAttempt]));
+  }
+};
+
 
   return (
     <div>

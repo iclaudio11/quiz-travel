@@ -5,11 +5,9 @@ import planeImage from '../../images/airplane.png';
 
 
 function StartScreen() {
-  const [isStarted, setIsStarted] = useState(false);
   const navigate = useNavigate();
 
   const onStartClick = () => {
-    setIsStarted(true);
     navigate("/quiz");
   };
 
